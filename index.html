@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Primary -->
+  <title>Mario Petazzi | Refrigeración, Gasista y Electricista en San Nicolás de los Arroyos</title>
+  <meta name="description" content="Técnico matriculado en refrigeración, gasista y electricista en San Nicolás de los Arroyos, Buenos Aires. Service de aire acondicionado, instalación de gas, instalaciones eléctricas. Matrícula 72786. Llamanos o escribinos por WhatsApp." />
+  <meta name="keywords" content="refrigeración San Nicolás de los Arroyos, gasista matriculado San Nicolás, electricista San Nicolás de los Arroyos, service aire acondicionado, reparación heladera, instalación gas natural, instalaciones eléctricas, técnico refrigeración Buenos Aires, gasista Buenos Aires, electricista Buenos Aires, Mario Petazzi, matrícula 72786" />
+  <meta name="author" content="Mario Petazzi" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://mariopetazzi.com.ar/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Mario Petazzi | Refrigeración, Gasista y Electricista" />
+  <meta property="og:description" content="Técnico matriculado en refrigeración, gasista y electricista en San Nicolás de los Arroyos. Escribinos por WhatsApp." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:locale" content="es_AR" />
+
+  <!-- Schema.org Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Mario Petazzi",
+    "description": "Técnico matriculado en refrigeración, gasista y electricista en San Nicolás de los Arroyos, Buenos Aires.",
+    "telephone": "+5493364300959",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "San Nicolás de los Arroyos",
+      "addressRegion": "Buenos Aires",
+      "addressCountry": "AR"
+    },
+    "sameAs": ["https://www.instagram.com/mario_petazzi"]
+  }
+  </script>
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            frio: { DEFAULT: '#0EA5E9', dark: '#0284C7', light: '#E0F2FE' },
+            gas:  { DEFAULT: '#F97316', dark: '#EA580C', light: '#FFF7ED' },
+            elec: { DEFAULT: '#EAB308', dark: '#CA8A04', light: '#FEFCE8' },
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .hero-bg {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 60%, #0f2744 100%);
+    }
+
+    .stripe-frio  { background: linear-gradient(135deg, #0EA5E9, #0284C7); }
+    .stripe-gas   { background: linear-gradient(135deg, #F97316, #EA580C); }
+    .stripe-elec  { background: linear-gradient(135deg, #EAB308, #CA8A04); }
+
+    .card-hover {
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+
+    .wsp-float {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 999;
+      animation: pulse-wsp 2.5s infinite;
+    }
+    @keyframes pulse-wsp {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+      50%       { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+    }
+
+    .section-tag {
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 4px 14px;
+      border-radius: 999px;
+    }
+
+    /* ── Logo flotante ── */
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50%       { transform: translateY(-18px); }
+    }
+    .logo-float { animation: float 5s ease-in-out infinite; }
+
+    @keyframes spin-slow {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+    .glow-ring {
+      animation: spin-slow 10s linear infinite;
+    }
+
+    /* ── Hero text: entra al cargar ── */
+    @keyframes hero-in {
+      from { opacity: 0; transform: translateY(28px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-anim { opacity: 0; animation: hero-in 0.7s ease forwards; }
+    .hero-anim-1 { animation-delay: 0.1s; }
+    .hero-anim-2 { animation-delay: 0.25s; }
+    .hero-anim-3 { animation-delay: 0.4s; }
+    .hero-anim-4 { animation-delay: 0.55s; }
+
+    /* ── Scroll animations ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in {
+      opacity: 0;
+      transition: opacity 0.7s ease;
+    }
+    .fade-in.visible { opacity: 1; }
+
+    .delay-1 { transition-delay: 0.1s; }
+    .delay-2 { transition-delay: 0.22s; }
+    .delay-3 { transition-delay: 0.34s; }
+    .delay-4 { transition-delay: 0.46s; }
+  </style>
+</head>
+
+<body class="font-sans bg-white text-slate-800 antialiased">
+
+  <!-- ═══════════════════════  NAVBAR  ═══════════════════════ -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur border-b border-slate-700/50">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Logo Mario Petazzi" class="h-10 w-auto object-contain" />
+        <div>
+          <p class="text-white font-bold text-sm leading-tight">Mario Petazzi</p>
+          <p class="text-slate-400 text-xs">Mat. 72786</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <a href="https://wa.me/5493364300959?text=Hola%20Mario%2C%20quisiera%20consultar%20por%20un%20servicio"
+           target="_blank" rel="noopener"
+           class="flex items-center gap-2 bg-green-500 hover:bg-green-400 text-white text-sm font-semibold px-4 py-2 rounded-full transition-colors">
+          <i class="fab fa-whatsapp text-base"></i>
+          <span class="hidden sm:inline">WhatsApp</span>
+        </a>
+        <a href="https://www.instagram.com/mario_petazzi" target="_blank" rel="noopener"
+           class="flex items-center gap-2 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 hover:opacity-90 text-white text-sm font-semibold px-4 py-2 rounded-full transition-opacity">
+          <i class="fab fa-instagram text-base"></i>
+          <span class="hidden sm:inline">Instagram</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════  HERO  ═══════════════════════ -->
+  <section class="hero-bg pt-24 pb-20 px-4 min-h-screen flex items-center">
+    <div class="max-w-6xl mx-auto w-full">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <span class="section-tag bg-sky-500/20 text-sky-400 mb-4 hero-anim hero-anim-1">Técnico Matriculado · Mat. 72786</span>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-tight mt-2 hero-anim hero-anim-2">
+            Refrigeración,<br />
+            <span class="text-frio">Gas</span> &amp;
+            <span class="text-elec">Electricidad</span>
+          </h1>
+          <p class="mt-5 text-slate-300 text-lg leading-relaxed max-w-md hero-anim hero-anim-3">
+            Servicio profesional en <strong class="text-white">San Nicolás de los Arroyos</strong> y alrededores.
+            Instalación, mantenimiento y reparación con garantía de trabajo.
+          </p>
+
+          <!-- Servicios pills -->
+          <div class="flex flex-wrap gap-2 mt-6 hero-anim hero-anim-3">
+            <span class="bg-frio/20 text-frio text-xs font-semibold px-3 py-1 rounded-full border border-frio/30">
+              <i class="fas fa-snowflake mr-1"></i>Aire acondicionado
+            </span>
+            <span class="bg-gas/20 text-gas text-xs font-semibold px-3 py-1 rounded-full border border-gas/30">
+              <i class="fas fa-fire mr-1"></i>Gas natural &amp; envasado
+            </span>
+            <span class="bg-elec/20 text-elec text-xs font-semibold px-3 py-1 rounded-full border border-elec/30">
+              <i class="fas fa-bolt mr-1"></i>Instalaciones eléctricas
+            </span>
+          </div>
+
+          <!-- CTAs -->
+          <div class="flex flex-col sm:flex-row gap-3 mt-8 hero-anim hero-anim-4">
+            <a href="https://wa.me/5493364300959?text=Hola%20Mario%2C%20quisiera%20consultar%20por%20un%20servicio"
+               target="_blank" rel="noopener"
+               class="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-lg px-7 py-4 rounded-2xl transition-colors shadow-lg shadow-green-500/30">
+              <i class="fab fa-whatsapp text-2xl"></i>
+              Escribir por WhatsApp
+            </a>
+            <a href="https://www.instagram.com/mario_petazzi" target="_blank" rel="noopener"
+               class="flex items-center justify-center gap-3 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 hover:opacity-90 text-white font-bold text-lg px-7 py-4 rounded-2xl transition-opacity shadow-lg shadow-pink-500/30">
+              <i class="fab fa-instagram text-2xl"></i>
+              Ver Instagram
+            </a>
+          </div>
+        </div>
+
+        <!-- Logo flotante -->
+        <div class="flex justify-center items-center hero-anim hero-anim-2">
+          <div class="relative flex items-center justify-center">
+            <!-- Aura de colores girando -->
+            <div class="glow-ring absolute w-72 h-72 sm:w-80 sm:h-80 rounded-full"
+                 style="background: conic-gradient(from 0deg, #0EA5E9 0%, #F97316 33%, #EAB308 66%, #0EA5E9 100%); filter: blur(48px); opacity: 0.35;"></div>
+            <!-- Segundo aro más chico -->
+            <div class="absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full border border-white/10"
+                 style="background: radial-gradient(circle, rgba(14,165,233,0.08) 0%, transparent 70%);"></div>
+            <!-- Logo -->
+            <img src="logo.png"
+                 alt="Mario Petazzi - Refrigeración, Gasista y Electricista en San Nicolás de los Arroyos"
+                 class="logo-float relative z-10 w-56 sm:w-72 lg:w-80 object-contain drop-shadow-2xl" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  SERVICIOS  ═══════════════════════ -->
+  <section id="servicios" class="py-20 px-4 bg-slate-50">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14 fade-up">
+        <span class="section-tag bg-slate-200 text-slate-600">Servicios</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">
+          Todo lo que necesitás, en un solo lugar
+        </h2>
+        <p class="text-slate-500 mt-3 max-w-xl mx-auto">
+          Técnico con experiencia en tres especialidades. Trabajo garantizado en San Nicolás y zona.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-7">
+
+        <!-- Refrigeración -->
+        <article class="bg-white rounded-3xl overflow-hidden shadow-md card-hover border border-slate-100 fade-up delay-1">
+          <div class="stripe-frio p-6 flex items-center gap-4">
+            <div class="bg-white/20 rounded-2xl p-3">
+              <i class="fas fa-snowflake text-white text-3xl"></i>
+            </div>
+            <h3 class="text-white font-black text-xl">Refrigeración</h3>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-frio mt-0.5 flex-shrink-0"></i>
+                Instalación y service de aires acondicionados split
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-frio mt-0.5 flex-shrink-0"></i>
+                Reparación de aires acondicionados
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-frio mt-0.5 flex-shrink-0"></i>
+                Limpieza de aires acondicionados
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-frio mt-0.5 flex-shrink-0"></i>
+                Instalación y service de aires acondicionados inverter
+              </li>
+            </ul>
+            <a href="https://wa.me/5493364300959?text=Hola%20Mario%2C%20necesito%20consultar%20por%20un%20servicio%20de%20refrigeraci%C3%B3n"
+               target="_blank" rel="noopener"
+               class="mt-6 flex items-center justify-center gap-2 bg-frio hover:bg-frio-dark text-white font-bold py-3 rounded-xl transition-colors w-full">
+              <i class="fab fa-whatsapp"></i> Consultar
+            </a>
+          </div>
+        </article>
+
+        <!-- Gasista -->
+        <article class="bg-white rounded-3xl overflow-hidden shadow-md card-hover border border-slate-100 fade-up delay-2">
+          <div class="stripe-gas p-6 flex items-center gap-4">
+            <div class="bg-white/20 rounded-2xl p-3">
+              <i class="fas fa-fire text-white text-3xl"></i>
+            </div>
+            <h3 class="text-white font-black text-xl">Gasista</h3>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-gas mt-0.5 flex-shrink-0"></i>
+                Instalaciones de gas natural y envasado
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-gas mt-0.5 flex-shrink-0"></i>
+                Service y reparación de calefones
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-gas mt-0.5 flex-shrink-0"></i>
+                Reparación de termotanques
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-gas mt-0.5 flex-shrink-0"></i>
+                Conexión de cocinas y estufas
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-gas mt-0.5 flex-shrink-0"></i>
+                Habilitación y certificación de instalaciones
+              </li>
+            </ul>
+            <a href="https://wa.me/5493364300959?text=Hola%20Mario%2C%20necesito%20consultar%20por%20un%20servicio%20de%20gas"
+               target="_blank" rel="noopener"
+               class="mt-6 flex items-center justify-center gap-2 bg-gas hover:bg-gas-dark text-white font-bold py-3 rounded-xl transition-colors w-full">
+              <i class="fab fa-whatsapp"></i> Consultar
+            </a>
+          </div>
+        </article>
+
+        <!-- Electricista -->
+        <article class="bg-white rounded-3xl overflow-hidden shadow-md card-hover border border-slate-100 fade-up delay-3">
+          <div class="stripe-elec p-6 flex items-center gap-4">
+            <div class="bg-white/20 rounded-2xl p-3">
+              <i class="fas fa-bolt text-white text-3xl"></i>
+            </div>
+            <h3 class="text-white font-black text-xl">Electricista</h3>
+          </div>
+          <div class="p-6">
+            <ul class="space-y-3 text-slate-600">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-elec-dark mt-0.5 flex-shrink-0"></i>
+                Instalaciones eléctricas residenciales
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-elec-dark mt-0.5 flex-shrink-0"></i>
+                Tableros eléctricos y disyuntores
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-elec-dark mt-0.5 flex-shrink-0"></i>
+                Reparación de cortocircuitos y fallas
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-elec-dark mt-0.5 flex-shrink-0"></i>
+                Puesta a tierra y protecciones
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-check-circle text-elec-dark mt-0.5 flex-shrink-0"></i>
+                Extensiones y bocas de luz/toma
+              </li>
+            </ul>
+            <a href="https://wa.me/5493364300959?text=Hola%20Mario%2C%20necesito%20consultar%20por%20un%20servicio%20el%C3%A9ctrico"
+               target="_blank" rel="noopener"
+               class="mt-6 flex items-center justify-center gap-2 bg-elec hover:bg-elec-dark text-slate-900 font-bold py-3 rounded-xl transition-colors w-full">
+              <i class="fab fa-whatsapp"></i> Consultar
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  POR QUÉ ELEGIRME  ═══════════════════════ -->
+  <section class="py-20 px-4 bg-white">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14 fade-up">
+        <span class="section-tag bg-slate-100 text-slate-600">¿Por qué elegirme?</span>
+        <h2 class="text-3xl sm:text-4xl font-black text-slate-900 mt-3">Trabajo con seriedad y garantía</h2>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100 fade-up delay-1">
+          <div class="bg-frio/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-id-card text-frio text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 text-lg">Títulos y Matrícula</h3>
+          <p class="text-slate-500 text-sm mt-2">Técnico en Refrigeración · Técnico Electricista · Gasista Matriculado N.° 72786.</p>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100 fade-up delay-2">
+          <div class="bg-gas/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-tools text-gas text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 text-lg">Experiencia Comprobada</h3>
+          <p class="text-slate-500 text-sm mt-2">Años de trayectoria en refrigeración, gas y electricidad en San Nicolás y la zona.</p>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100 fade-up delay-3">
+          <div class="bg-elec/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-shield-halved text-elec-dark text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 text-lg">Trabajo con Garantía</h3>
+          <p class="text-slate-500 text-sm mt-2">Cada trabajo tiene respaldo. Si algo falla, lo solucionamos sin costo adicional.</p>
+        </div>
+
+        <div class="bg-slate-50 rounded-2xl p-6 text-center border border-slate-100 fade-up delay-4">
+          <div class="bg-frio/10 rounded-full w-14 h-14 flex items-center justify-center mx-auto mb-4">
+            <i class="fas fa-clock text-frio text-2xl"></i>
+          </div>
+          <h3 class="font-bold text-slate-800 text-lg">Atención Rápida</h3>
+          <p class="text-slate-500 text-sm mt-2">Respuesta ágil por WhatsApp. Coordinamos la visita según tu disponibilidad.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  ZONA DE COBERTURA  ═══════════════════════ -->
+  <section class="py-16 px-4 bg-slate-900">
+    <div class="max-w-4xl mx-auto text-center fade-in">
+      <i class="fas fa-location-dot text-sky-400 text-4xl mb-4"></i>
+      <h2 class="text-2xl sm:text-3xl font-black text-white">Zona de trabajo</h2>
+      <p class="text-slate-300 mt-3 text-lg">
+        <strong class="text-white">San Nicolás de los Arroyos</strong> y alrededores.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  CTA FINAL  ═══════════════════════ -->
+  <section class="py-20 px-4 bg-gradient-to-br from-slate-800 to-slate-900">
+    <div class="max-w-3xl mx-auto text-center fade-up">
+      <h2 class="text-3xl sm:text-4xl font-black text-white leading-tight">
+        ¿Necesitás un presupuesto?<br />
+        <span class="text-green-400">Escribime ahora</span>
+      </h2>
+      <p class="text-slate-300 mt-4 text-lg">
+        Respondemos rápido. Sin compromiso, sin costo por la consulta.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+        <a href="https://wa.me/5493364300959?text=Hola%20Mario%2C%20quisiera%20pedir%20un%20presupuesto"
+           target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-3 bg-green-500 hover:bg-green-400 text-white font-bold text-xl px-8 py-5 rounded-2xl transition-colors shadow-2xl shadow-green-500/30">
+          <i class="fab fa-whatsapp text-3xl"></i>
+          Escribir por WhatsApp
+        </a>
+        <a href="https://www.instagram.com/mario_petazzi" target="_blank" rel="noopener"
+           class="flex items-center justify-center gap-3 bg-gradient-to-br from-purple-600 via-pink-500 to-orange-400 hover:opacity-90 text-white font-bold text-xl px-8 py-5 rounded-2xl transition-opacity shadow-2xl shadow-pink-500/30">
+          <i class="fab fa-instagram text-3xl"></i>
+          Seguinos en Instagram
+        </a>
+      </div>
+
+      <p class="text-slate-500 mt-8 text-sm">
+        <i class="fas fa-phone mr-2 text-slate-400"></i>
+        <a href="tel:+5493364300959" class="hover:text-slate-300 transition-colors">+54 9 336 430-0959</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════  FOOTER  ═══════════════════════ -->
+  <footer class="bg-slate-950 py-8 px-4">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <img src="logo.png" alt="Mario Petazzi" class="h-9 w-auto object-contain opacity-80" />
+        <div>
+          <p class="text-white font-bold text-sm">Mario Petazzi</p>
+          <p class="text-slate-500 text-xs">Refrigeración · Gasista · Electricista · Mat. 72786</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://wa.me/5493364300959" target="_blank" rel="noopener"
+           class="text-green-400 hover:text-green-300 transition-colors text-2xl" aria-label="WhatsApp">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        <a href="https://www.instagram.com/mario_petazzi" target="_blank" rel="noopener"
+           class="text-pink-400 hover:text-pink-300 transition-colors text-2xl" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="tel:+5493364300959"
+           class="text-slate-400 hover:text-slate-200 transition-colors text-2xl" aria-label="Teléfono">
+          <i class="fas fa-phone"></i>
+        </a>
+      </div>
+      <p class="text-slate-600 text-xs text-center sm:text-right">
+        San Nicolás de los Arroyos, Buenos Aires, Argentina
+      </p>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════  SCROLL ANIMATIONS  ═══════════════════════ -->
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up, .fade-in').forEach(el => observer.observe(el));
+  </script>
+
+  <!-- ═══════════════════════  WHATSAPP FLOTANTE  ═══════════════════════ -->
+  <a href="https://wa.me/5493364300959?text=Hola%20Mario%2C%20quisiera%20consultar%20por%20un%20servicio"
+     target="_blank" rel="noopener"
+     class="wsp-float bg-green-500 hover:bg-green-400 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl transition-colors"
+     aria-label="Contactar por WhatsApp">
+    <i class="fab fa-whatsapp text-4xl"></i>
+  </a>
+
+</body>
+</html>
